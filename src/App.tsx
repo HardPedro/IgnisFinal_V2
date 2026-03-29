@@ -9,7 +9,7 @@ import { Vehicles } from './pages/Vehicles';
 import { Catalog } from './pages/Catalog';
 import { Quotes } from './pages/Quotes';
 import { WorkOrders } from './pages/WorkOrders';
-import { Leads } from './pages/Leads';
+import { Schedule } from './pages/Schedule';
 import { Settings } from './pages/Settings';
 import Financial from './pages/Financial';
 import { WhatsApp } from './pages/WhatsApp';
@@ -125,7 +125,7 @@ function AppRoutes() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/quotes" element={<Quotes />} />
           <Route path="/work-orders" element={<WorkOrders />} />
-          <Route path="/leads" element={<Leads />} />
+          <Route path="/schedule" element={<Schedule />} />
           <Route path="/financial" element={<ProtectedRoute requiredPermission="canViewFinancial"><Financial /></ProtectedRoute>} />
           <Route path="/whatsapp" element={<ProtectedRoute requiredPlan="central"><WhatsApp /></ProtectedRoute>} />
           <Route path="/intelligent-assistant" element={<ProtectedRoute requiredPlan="central"><IntelligentAssistant /></ProtectedRoute>} />

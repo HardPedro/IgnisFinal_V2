@@ -10,7 +10,7 @@ import {
   MessageSquare,
   Settings,
   DollarSign,
-  Target,
+  Calendar,
   Bot,
   Shield
 } from 'lucide-react';
@@ -47,7 +47,7 @@ export function Home() {
       title: 'GESTÃO',
       items: [
         { path: '/dashboard', label: 'Painel do Gestor', desc: 'Métricas e relatórios', icon: HomeIcon, color: 'bg-pink-500', show: isGestor },
-        { path: '/leads', label: 'Leads', desc: 'Gestão de leads e funil', icon: Target, color: 'bg-orange-500', show: true },
+        { path: '/schedule', label: 'Agenda', desc: 'Gestão de compromissos', icon: Calendar, color: 'bg-orange-500', show: true },
         { path: '/financial', label: 'Financeiro', desc: 'Controle de caixa e lucros', icon: DollarSign, color: 'bg-yellow-500', show: isGestor || mecanicoPermissions.canViewFinancial },
       ]
     },

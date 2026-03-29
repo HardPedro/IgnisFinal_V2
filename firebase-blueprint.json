@@ -94,6 +94,24 @@
       },
       "required": ["customerId", "vehicleId", "description", "status", "createdAt"]
     },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A scheduled appointment in the calendar.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "time": { "type": "string", "format": "time" },
+        "customerId": { "type": "string" },
+        "vehicleId": { "type": "string" },
+        "preQuoteId": { "type": "string" },
+        "status": { "type": "string", "enum": ["scheduled", "completed", "cancelled"] },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "date", "time", "status", "createdAt", "updatedAt"]
+    },
     "PreQuote": {
       "title": "PreQuote",
       "description": "A pre-quote with prices, awaiting financial approval from the client.",
@@ -303,9 +321,9 @@
       "schema": { "$ref": "#/entities/WhatsappMessage" },
       "description": "Tenant whatsapp messages"
     },
-    "/tenants/{tenantId}/leads/{leadId}": {
-      "schema": { "$ref": "#/entities/Lead" },
-      "description": "Tenant leads"
+    "/tenants/{tenantId}/appointments/{appointmentId}": {
+      "schema": { "$ref": "#/entities/Appointment" },
+      "description": "Tenant appointments"
     }
   }
 }

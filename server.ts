@@ -837,7 +837,7 @@ Conversa:\n`;
   app.post('/api/pre-quote/:tenantId/:preQuoteId/action', async (req, res) => {
     try {
       const { tenantId, preQuoteId } = req.params;
-      const { status } = req.body; // 'aprovado' or 'reprovado'
+      const { status, appointmentDate, appointmentTime } = req.body; // 'aprovado' or 'reprovado'
       
       const pqRef = doc(db, `tenants/${tenantId}/pre_quotes`, preQuoteId);
       const pqSnap = await getDoc(pqRef);
@@ -861,6 +861,23 @@ Conversa:\n`;
           createdAt: serverTimestamp(),
           updatedAt: serverTimestamp()
         });
+
+        // Create appointment if date and time are provided
+        if (appointmentDate && appointmentTime) {
+          const appsRef = collection(db, `tenants/${tenantId}/appointments`);
+          await addDoc(appsRef, {
+            title: `Avaliação Presencial - Pré-orçamento Aprovado`,
+            date: appointmentDate,
+            time: appointmentTime,
+            customerId: preQuote.customerId || '',
+            vehicleId: preQuote.vehicleId || '',
+            preQuoteId: preQuoteId,
+            status: 'scheduled',
+            notes: `Agendado automaticamente após aprovação do pré-orçamento.\nDescrição: ${preQuote.description || ''}`,
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+          });
+        }
       }
 
       // Find the conversation to send a message back
