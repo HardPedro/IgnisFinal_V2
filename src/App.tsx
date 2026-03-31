@@ -99,7 +99,7 @@ function AppRoutes() {
 
           <button
             onClick={logout}
-            className="w-full py-3 px-4 bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-xl transition-colors"
+            className="w-full py-3 px-4 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-xl transition-colors"
           >
             Sair e tentar com outra conta
           </button>

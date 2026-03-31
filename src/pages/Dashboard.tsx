@@ -139,35 +139,35 @@ export function Dashboard() {
     : 100;
 
   const cards = [
-    { name: 'OS em Aberto', value: stats.openOS, icon: Wrench, color: 'bg-yellow-500', bgLight: 'bg-yellow-50', text: 'text-yellow-600' },
-    { name: 'Orçamentos Pendentes', value: stats.pendingQuotes, icon: FileText, color: 'bg-gray-800', bgLight: 'bg-gray-100', text: 'text-gray-700' },
+    { name: 'OS em Aberto', value: stats.openOS, icon: Wrench, color: 'bg-orange-500', bgLight: 'bg-orange-50', text: 'text-orange-600' },
+    { name: 'Orçamentos Pendentes', value: stats.pendingQuotes, icon: FileText, color: 'bg-blue-900', bgLight: 'bg-blue-50', text: 'text-blue-600' },
     { name: 'Novos Leads (IA)', value: stats.newLeads, icon: MessageSquare, color: 'bg-emerald-500', bgLight: 'bg-emerald-50', text: 'text-emerald-600' },
     { name: 'Peças em Baixa', value: stats.lowStock, icon: AlertTriangle, color: 'bg-rose-500', bgLight: 'bg-rose-50', text: 'text-rose-600' },
   ];
 
   if (isLoading) return (
     <div className="flex items-center justify-center h-full">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-500"></div>
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
     </div>
   );
 
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Painel do Gestor</h1>
+        <h1 className="text-3xl font-bold text-blue-950 tracking-tight">Painel do Gestor</h1>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gray-900 overflow-hidden shadow-sm rounded-2xl border border-gray-800 relative"
+          className="bg-blue-950 overflow-hidden shadow-sm rounded-2xl border border-blue-900 relative"
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-gray-400">Receita do Mês</h3>
-              <div className="p-2 bg-gray-800 rounded-lg">
-                <DollarSign className="h-5 w-5 text-yellow-500" />
+              <h3 className="text-sm font-medium text-blue-200">Receita do Mês</h3>
+              <div className="p-2 bg-blue-900 rounded-lg">
+                <DollarSign className="h-5 w-5 text-orange-500" />
               </div>
             </div>
             <div className="flex items-baseline">
@@ -180,7 +180,7 @@ export function Dashboard() {
               <span className={`${revenueGrowth >= 0 ? 'text-emerald-400' : 'text-rose-400'} font-medium`}>
                 {revenueGrowth > 0 ? '+' : ''}{revenueGrowth.toFixed(1)}%
               </span>
-              <span className="ml-2 text-gray-500">vs mês anterior</span>
+              <span className="ml-2 text-blue-300">vs mês anterior</span>
             </div>
           </div>
         </motion.div>
@@ -189,20 +189,20 @@ export function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-gray-100"
+          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-slate-200"
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-gray-500">OS Finalizadas (Mês)</h3>
+              <h3 className="text-sm font-medium text-slate-500">OS Finalizadas (Mês)</h3>
               <div className="p-2 bg-blue-50 rounded-lg">
                 <CheckCircle className="h-5 w-5 text-blue-600" />
               </div>
             </div>
             <div className="flex items-baseline">
-              <p className="text-3xl font-bold text-gray-900">{stats.closedOSThisMonth}</p>
+              <p className="text-3xl font-bold text-blue-950">{stats.closedOSThisMonth}</p>
             </div>
             <div className="mt-4 flex items-center text-sm">
-              <span className="text-gray-500">Serviços concluídos com sucesso</span>
+              <span className="text-slate-500">Serviços concluídos com sucesso</span>
             </div>
           </div>
         </motion.div>
@@ -211,20 +211,20 @@ export function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-gray-100"
+          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-slate-200"
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-gray-500">Recalls Ativos</h3>
-              <div className="p-2 bg-purple-50 rounded-lg">
-                <Clock className="h-5 w-5 text-purple-600" />
+              <h3 className="text-sm font-medium text-slate-500">Recalls Ativos</h3>
+              <div className="p-2 bg-orange-50 rounded-lg">
+                <Clock className="h-5 w-5 text-orange-600" />
               </div>
             </div>
             <div className="flex items-baseline">
-              <p className="text-3xl font-bold text-gray-900">{stats.activeRecalls}</p>
+              <p className="text-3xl font-bold text-blue-950">{stats.activeRecalls}</p>
             </div>
             <div className="mt-4 flex items-center text-sm">
-              <span className="text-purple-600 font-medium">Oportunidades de retorno</span>
+              <span className="text-orange-600 font-medium">Oportunidades de retorno</span>
             </div>
           </div>
         </motion.div>
@@ -233,22 +233,22 @@ export function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-gray-100"
+          className="bg-white overflow-hidden shadow-sm rounded-2xl border border-slate-200"
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-gray-500">Ticket Médio</h3>
+              <h3 className="text-sm font-medium text-slate-500">Ticket Médio</h3>
               <div className="p-2 bg-emerald-50 rounded-lg">
                 <TrendingUp className="h-5 w-5 text-emerald-600" />
               </div>
             </div>
             <div className="flex items-baseline">
-              <p className="text-3xl font-bold text-gray-900">
+              <p className="text-3xl font-bold text-blue-950">
                 R$ {stats.closedOSThisMonth > 0 ? (stats.revenueThisMonth / stats.closedOSThisMonth).toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '0,00'}
               </p>
             </div>
             <div className="mt-4 flex items-center text-sm">
-              <span className="text-gray-500">Por ordem de serviço</span>
+              <span className="text-slate-500">Por ordem de serviço</span>
             </div>
           </div>
         </motion.div>
@@ -256,25 +256,25 @@ export function Dashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Chart Section */}
-        <div className="lg:col-span-2 bg-white shadow-sm rounded-2xl border border-gray-100 p-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-6">Evolução de Receita</h3>
+        <div className="lg:col-span-2 bg-white shadow-sm rounded-2xl border border-slate-200 p-6">
+          <h3 className="text-lg font-bold text-blue-950 mb-6">Evolução de Receita</h3>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={stats.chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorReceita" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#EAB308" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#EAB308" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#f97316" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#f97316" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#6b7280', fontSize: 12}} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill: '#6b7280', fontSize: 12}} tickFormatter={(value) => `R$ ${value}`} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} tickFormatter={(value) => `R$ ${value}`} />
                 <Tooltip 
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                  contentStyle={{ borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                   formatter={(value: number) => [`R$ ${value}`, 'Receita']}
                 />
-                <Area type="monotone" dataKey="receita" stroke="#EAB308" strokeWidth={3} fillOpacity={1} fill="url(#colorReceita)" />
+                <Area type="monotone" dataKey="receita" stroke="#f97316" strokeWidth={3} fillOpacity={1} fill="url(#colorReceita)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -282,7 +282,7 @@ export function Dashboard() {
 
         {/* Operational Cards */}
         <div className="space-y-4">
-          <h3 className="text-lg font-bold text-gray-900 mb-2">Operacional</h3>
+          <h3 className="text-lg font-bold text-blue-950 mb-2">Operacional</h3>
           {cards.map((card, index) => {
             const Icon = card.icon;
             return (
@@ -291,20 +291,20 @@ export function Dashboard() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white overflow-hidden shadow-sm rounded-2xl border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                className="bg-white overflow-hidden shadow-sm rounded-2xl border border-slate-200 hover:border-orange-500/50 hover:shadow-md transition-all duration-300 group"
               >
                 <div className="p-5">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <div className={`rounded-xl p-3 ${card.bgLight}`}>
+                      <div className={`rounded-xl p-3 ${card.bgLight} group-hover:scale-110 transition-transform`}>
                         <Icon className={`h-5 w-5 ${card.text}`} />
                       </div>
                     </div>
                     <div className="ml-4 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">{card.name}</dt>
+                        <dt className="text-sm font-medium text-slate-500 truncate">{card.name}</dt>
                         <dd>
-                          <div className="text-2xl font-bold text-gray-900 mt-1">{card.value}</div>
+                          <div className="text-2xl font-bold text-blue-950 mt-1">{card.value}</div>
                         </dd>
                       </dl>
                     </div>

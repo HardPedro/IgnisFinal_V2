@@ -30,38 +30,38 @@ export function Home() {
     {
       title: 'CADASTROS',
       items: [
-        { path: '/vehicles', label: 'Carros', desc: 'Gerenciar veículos', icon: Car, color: 'bg-purple-500', show: true },
-        { path: '/catalog', label: 'Produtos', desc: 'Produtos e serviços', icon: Package, color: 'bg-cyan-500', show: true },
-        { path: '/customers', label: 'Clientes', desc: 'Cadastro de clientes', icon: Users, color: 'bg-blue-400', show: true },
+        { path: '/vehicles', label: 'Carros', desc: 'Gerenciar veículos', icon: Car, show: true },
+        { path: '/catalog', label: 'Produtos', desc: 'Produtos e serviços', icon: Package, show: true },
+        { path: '/customers', label: 'Clientes', desc: 'Cadastro de clientes', icon: Users, show: true },
       ]
     },
     {
       title: 'VENDAS & LEADS',
       items: [
-        { path: '/quotes', label: 'Orçamentos', desc: 'Gerenciar orçamentos', icon: FileText, color: 'bg-emerald-500', show: true },
-        { path: '/whatsapp', label: 'Central Inteligente', desc: 'Atendimento via WhatsApp', icon: MessageSquare, color: 'bg-blue-500', show: tenantData?.plan === 'central' || userData?.role === 'SuperAdmin' },
-        { path: '/intelligent-assistant', label: 'Assistente Inteligente', desc: 'Configurar IA', icon: Bot, color: 'bg-indigo-500', show: tenantData?.plan === 'central' || userData?.role === 'SuperAdmin' },
+        { path: '/quotes', label: 'Orçamentos', desc: 'Gerenciar orçamentos', icon: FileText, show: true },
+        { path: '/whatsapp', label: 'Central Inteligente', desc: 'Atendimento via WhatsApp', icon: MessageSquare, show: tenantData?.plan === 'central' || userData?.role === 'SuperAdmin' },
+        { path: '/intelligent-assistant', label: 'Assistente Inteligente', desc: 'Configurar IA', icon: Bot, show: tenantData?.plan === 'central' || userData?.role === 'SuperAdmin' },
       ]
     },
     {
       title: 'GESTÃO',
       items: [
-        { path: '/dashboard', label: 'Painel do Gestor', desc: 'Métricas e relatórios', icon: HomeIcon, color: 'bg-pink-500', show: isGestor },
-        { path: '/schedule', label: 'Agenda', desc: 'Gestão de compromissos', icon: Calendar, color: 'bg-orange-500', show: true },
-        { path: '/financial', label: 'Financeiro', desc: 'Controle de caixa e lucros', icon: DollarSign, color: 'bg-yellow-500', show: isGestor || mecanicoPermissions.canViewFinancial },
+        { path: '/dashboard', label: 'Painel do Gestor', desc: 'Métricas e relatórios', icon: HomeIcon, show: isGestor },
+        { path: '/schedule', label: 'Agenda', desc: 'Gestão de compromissos', icon: Calendar, show: true },
+        { path: '/financial', label: 'Financeiro', desc: 'Controle de caixa e lucros', icon: DollarSign, show: isGestor || mecanicoPermissions.canViewFinancial },
       ]
     },
     {
       title: 'SERVIÇOS',
       items: [
-        { path: '/work-orders', label: 'Manutenções', desc: 'Revisões e reparos', icon: Wrench, color: 'bg-cyan-500', show: true },
+        { path: '/work-orders', label: 'Manutenções', desc: 'Revisões e reparos', icon: Wrench, show: true },
       ]
     },
     {
       title: 'OUTROS',
       items: [
-        { path: '/settings', label: 'Configurações', desc: 'Ajustes do sistema', icon: Settings, color: 'bg-teal-500', show: isGestor || mecanicoPermissions.canEditSettings },
-        { path: '/admin', label: 'Administração', desc: 'Gerenciar estabelecimentos', icon: Shield, color: 'bg-red-500', show: userData?.role === 'SuperAdmin' },
+        { path: '/settings', label: 'Configurações', desc: 'Ajustes do sistema', icon: Settings, show: isGestor || mecanicoPermissions.canEditSettings },
+        { path: '/admin', label: 'Administração', desc: 'Gerenciar estabelecimentos', icon: Shield, show: userData?.role === 'SuperAdmin' },
       ]
     }
   ].map(category => ({
@@ -72,8 +72,8 @@ export function Home() {
   return (
     <div className="h-full flex flex-col max-w-7xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Menu Principal</h1>
-        <p className="text-gray-500 mt-1">Selecione o módulo que deseja acessar.</p>
+        <h1 className="text-3xl font-bold text-blue-950 tracking-tight">Menu Principal</h1>
+        <p className="text-slate-500 mt-1">Selecione o módulo que deseja acessar.</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-max pb-8">
@@ -83,9 +83,9 @@ export function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm flex flex-col"
+            className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col"
           >
-            <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
               {category.title}
             </h2>
             <div className="space-y-2 flex-1">
@@ -95,14 +95,14 @@ export function Home() {
                   <Link 
                     key={item.path}
                     to={item.path}
-                    className="flex items-center p-3 -mx-3 rounded-xl hover:bg-gray-50 transition-colors group"
+                    className="flex items-center p-3 -mx-3 rounded-xl hover:bg-slate-50 transition-all group border border-transparent hover:border-slate-200"
                   >
-                    <div className={`p-2.5 rounded-xl ${item.color} text-white mr-4 shadow-sm group-hover:scale-110 transition-transform`}>
+                    <div className="p-2.5 rounded-xl bg-blue-50 text-blue-600 mr-4 shadow-sm group-hover:bg-orange-500 group-hover:text-white transition-colors">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-gray-900">{item.label}</h3>
-                      <p className="text-xs text-gray-500">{item.desc}</p>
+                      <h3 className="text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors">{item.label}</h3>
+                      <p className="text-xs text-slate-500">{item.desc}</p>
                     </div>
                   </Link>
                 );

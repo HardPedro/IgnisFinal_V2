@@ -158,8 +158,8 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
         <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-yellow-50 rounded-xl">
-                <Bot className="h-6 w-6 text-yellow-600" />
+              <div className="p-2 bg-orange-50 rounded-xl">
+                <Bot className="h-6 w-6 text-orange-600" />
               </div>
               <h2 className="text-xl font-semibold text-gray-900">Configurações da IA</h2>
             </div>
@@ -167,8 +167,8 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
               <span className="text-sm font-medium text-gray-700">Status Global do Bot:</span>
               <button
                 onClick={() => setIsBotActive(!isBotActive)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 ${
-                  isBotActive ? 'bg-yellow-500' : 'bg-gray-200'
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ${
+                  isBotActive ? 'bg-orange-500' : 'bg-gray-200'
                 }`}
               >
                 <span
@@ -194,7 +194,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
                   value={behavior}
                   onChange={(e) => setBehavior(e.target.value)}
                   placeholder="Ex: Seja sempre muito educado e prestativo. Chame o cliente pelo nome. Sempre pergunte o modelo e ano do veículo antes de dar qualquer estimativa de preço..."
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -271,7 +271,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
                   value={templateInput}
                   onChange={(e) => setTemplateInput(e.target.value)}
                   placeholder="Ex: Olá {nome_cliente}! Segue o orçamento para o veículo {veiculo}: \n\nServiços:\n{servicos}\n\nPeças:\n{pecas}\n\nTotal: {total}"
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -289,7 +289,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
                   rows={4}
                   value={msgQuoteRequest}
                   onChange={(e) => setMsgQuoteRequest(e.target.value)}
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
               <div>
@@ -298,7 +298,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
                   rows={4}
                   value={msgPreQuote}
                   onChange={(e) => setMsgPreQuote(e.target.value)}
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
               <div>
@@ -307,7 +307,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
                   rows={4}
                   value={msgQuote}
                   onChange={(e) => setMsgQuote(e.target.value)}
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -317,7 +317,7 @@ Seja prestativo e dê dicas de como melhorar a comunicação com o cliente.`;
             <button
               onClick={handleSaveSettings}
               disabled={isSaving}
-              className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-xl text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50 transition-colors"
+              className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-xl text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 transition-colors"
             >
               <Save className="mr-2 h-5 w-5" />
               {isSaving ? 'Salvando...' : 'Salvar Configurações'}

@@ -377,7 +377,7 @@ export function WhatsApp() {
         </div>
         <button 
           onClick={() => setIsNewConvModalOpen(true)}
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-gray-900 bg-orange-500 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
         >
           <Plus className="-ml-1 mr-2 h-5 w-5" />
           Nova Conversa
@@ -395,7 +395,7 @@ export function WhatsApp() {
               <input
                 type="text"
                 placeholder="Buscar conversas..."
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-xl leading-5 bg-gray-50 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-xl leading-5 bg-gray-50 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
               />
             </div>
           </div>
@@ -411,7 +411,7 @@ export function WhatsApp() {
                   <li 
                     key={conv.id}
                     onClick={() => handleSelectConversation(conv)}
-                    className={`p-4 hover:bg-gray-100 cursor-pointer transition-colors ${selectedConv?.id === conv.id ? 'bg-yellow-50/50' : ''}`}
+                    className={`p-4 hover:bg-gray-100 cursor-pointer transition-colors ${selectedConv?.id === conv.id ? 'bg-orange-50/50' : ''}`}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="flex-shrink-0">
@@ -433,7 +433,7 @@ export function WhatsApp() {
                             {conv.customer_phone}
                           </p>
                           {conv.bot_active === 1 && (
-                            <Bot className="h-3 w-3 text-yellow-500" />
+                            <Bot className="h-3 w-3 text-orange-500" />
                           )}
                         </div>
                       </div>
@@ -473,11 +473,11 @@ export function WhatsApp() {
                     onClick={handleToggleBot}
                     className={`inline-flex items-center px-3 py-1.5 border text-sm font-medium rounded-lg shadow-sm transition-colors ${
                       isBotActive 
-                        ? 'bg-yellow-100 border-yellow-200 text-yellow-800 hover:bg-yellow-200' 
+                        ? 'bg-orange-100 border-orange-200 text-orange-800 hover:bg-orange-200' 
                         : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    <Bot className={`mr-2 h-4 w-4 ${isBotActive ? 'text-yellow-600' : 'text-gray-400'}`} />
+                    <Bot className={`mr-2 h-4 w-4 ${isBotActive ? 'text-orange-600' : 'text-gray-400'}`} />
                     {isBotActive ? 'Bot Ativo' : 'Ativar Bot'}
                   </button>
                 </div>
@@ -556,13 +556,13 @@ export function WhatsApp() {
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     placeholder={isBotActive ? "O Bot está respondendo (digite para assumir)..." : "Digite uma mensagem..."}
-                    className="flex-1 block w-full rounded-full border-gray-300 shadow-sm py-3 px-5 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                    className="flex-1 block w-full rounded-full border-gray-300 shadow-sm py-3 px-5 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                     disabled={isSending}
                   />
                   <button
                     type="submit"
                     disabled={(!newMessage.trim() && !selectedMedia) || isSending}
-                    className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-transparent shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
+                    className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-transparent shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50"
                   >
                     <Send className="h-5 w-5" />
                   </button>
@@ -601,10 +601,10 @@ export function WhatsApp() {
                       </h3>
                       
                       {whatsappNumbers.length === 0 ? (
-                        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                        <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
                           <div className="flex">
                             <div className="ml-3">
-                              <p className="text-sm text-yellow-700">
+                              <p className="text-sm text-orange-700">
                                 Você precisa configurar um número de WhatsApp nas Configurações primeiro.
                               </p>
                             </div>
@@ -617,7 +617,7 @@ export function WhatsApp() {
                             <select
                               value={selectedNumberId}
                               onChange={(e) => setSelectedNumberId(e.target.value)}
-                              className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm rounded-xl"
+                              className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-xl"
                             >
                               {whatsappNumbers.map(num => (
                                 <option key={num.id} value={num.id}>{num.phone_number}</option>
@@ -633,7 +633,7 @@ export function WhatsApp() {
                               value={newPhone}
                               onChange={(e) => setNewPhone(e.target.value)}
                               placeholder="Ex: 5511999999999"
-                              className="mt-1 block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                              className="mt-1 block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                               required
                             />
                           </div>
@@ -645,7 +645,7 @@ export function WhatsApp() {
                               value={newName}
                               onChange={(e) => setNewName(e.target.value)}
                               placeholder="Ex: João Silva"
-                              className="mt-1 block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                              className="mt-1 block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                             />
                           </div>
                         </div>
@@ -657,14 +657,14 @@ export function WhatsApp() {
                   <button
                     type="submit"
                     disabled={whatsappNumbers.length === 0 || !newPhone}
-                    className="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-4 py-2 bg-yellow-500 text-base font-medium text-white hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50"
+                    className="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50"
                   >
                     Iniciar Conversa
                   </button>
                   <button
                     type="button"
                     onClick={() => setIsNewConvModalOpen(false)}
-                    className="mt-3 w-full inline-flex justify-center rounded-xl border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="mt-3 w-full inline-flex justify-center rounded-xl border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   >
                     Cancelar
                   </button>
@@ -730,7 +730,7 @@ export function WhatsApp() {
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     placeholder="Adicionar uma legenda..."
-                    className="block w-full border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                    className="block w-full border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -741,14 +741,14 @@ export function WhatsApp() {
                     setIsMediaModalOpen(false);
                     setSelectedMedia(null);
                   }}
-                  className="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                  className="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                 >
                   Cancelar
                 </button>
                 <button
                   onClick={() => handleSendMessage()}
                   disabled={isSending}
-                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-xl text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
+                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-xl text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50"
                 >
                   {isSending ? 'Enviando...' : 'Enviar'}
                   <Send className="ml-2 h-4 w-4" />

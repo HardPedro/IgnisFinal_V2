@@ -506,20 +506,20 @@ export function WorkOrders() {
   return (
     <div className="space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center">
-          <Wrench className="mr-3 h-8 w-8 text-yellow-500" />
+        <h1 className="text-3xl font-bold text-blue-950 tracking-tight flex items-center">
+          <Wrench className="mr-3 h-8 w-8 text-orange-500" />
           Ordens de Serviço
         </h1>
         
         <div className="flex items-center space-x-4">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Filter className="h-4 w-4 text-gray-400" />
+              <Filter className="h-4 w-4 text-slate-400" />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="block w-full pl-10 pr-10 py-2 text-sm border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500 border bg-white shadow-sm"
+              className="block w-full pl-10 pr-10 py-2 text-sm border-slate-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 border bg-white shadow-sm"
             >
               <option value="todas">Todas as OS</option>
               <option value="aberta">Abertas</option>
@@ -531,7 +531,7 @@ export function WorkOrders() {
 
           <button
             onClick={handleOpenModal}
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 transition-all duration-200 whitespace-nowrap"
+            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-white bg-orange-500 hover:bg-orange-600 transition-all duration-200 whitespace-nowrap"
           >
             <Plus className="mr-2 h-4 w-4" />
             Nova OS
@@ -539,13 +539,13 @@ export function WorkOrders() {
         </div>
       </div>
 
-      <div className="flex space-x-4 border-b border-gray-200">
+      <div className="flex space-x-4 border-b border-slate-200">
         <button
           onClick={() => setActiveTab('orders')}
           className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
             activeTab === 'orders'
-              ? 'border-yellow-500 text-yellow-600'
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-orange-500 text-orange-600'
+              : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
           }`}
         >
           Ordens de Serviço
@@ -554,23 +554,23 @@ export function WorkOrders() {
           onClick={() => setActiveTab('recalls')}
           className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
             activeTab === 'recalls'
-              ? 'border-yellow-500 text-yellow-600'
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-orange-500 text-orange-600'
+              : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
           }`}
         >
           Retornos Programados
         </button>
       </div>
 
-      <div className="bg-white shadow-sm overflow-hidden sm:rounded-2xl border border-gray-100">
-        <ul className="divide-y divide-gray-100">
+      <div className="bg-white shadow-sm overflow-hidden sm:rounded-2xl border border-slate-100">
+        <ul className="divide-y divide-slate-100">
           {isLoading ? (
-            <li className="p-8 text-center text-gray-500">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-500 mx-auto"></div>
+            <li className="p-8 text-center text-slate-500">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto"></div>
             </li>
           ) : activeTab === 'orders' ? (
             filteredOrders.length === 0 ? (
-              <li className="p-8 text-center text-gray-500">Nenhuma OS encontrada com este filtro.</li>
+              <li className="p-8 text-center text-slate-500">Nenhuma OS encontrada com este filtro.</li>
             ) : (
               filteredOrders.map((order, index) => (
                 <motion.li 
@@ -578,14 +578,14 @@ export function WorkOrders() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   key={order.id} 
-                  className="p-6 hover:bg-gray-50 transition-colors"
+                  className="p-6 hover:bg-slate-50 transition-colors"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
                         <span className={`px-3 py-1 inline-flex text-xs leading-5 font-bold rounded-full ${
-                          order.status === 'fechada' ? 'bg-gray-100 text-gray-800' :
-                          order.status === 'em execução' ? 'bg-yellow-100 text-yellow-800' :
+                          order.status === 'fechada' ? 'bg-slate-100 text-slate-800' :
+                          order.status === 'em execução' ? 'bg-orange-100 text-orange-800' :
                           'bg-green-100 text-green-800'
                         }`}>
                           {order.status.toUpperCase()}
@@ -677,7 +677,7 @@ export function WorkOrders() {
                           {order.status === 'aberta' && (
                             <button 
                               onClick={() => handleStatusChange(order, 'em execução')}
-                              className="flex items-center px-4 py-2 bg-yellow-50 text-yellow-700 hover:bg-yellow-100 rounded-xl text-sm font-medium transition-colors" 
+                              className="flex items-center px-4 py-2 bg-orange-50 text-orange-700 hover:bg-orange-100 rounded-xl text-sm font-medium transition-colors" 
                             >
                               <Play className="h-4 w-4 mr-2" />
                               Iniciar Execução
@@ -802,7 +802,7 @@ export function WorkOrders() {
                         min="1"
                         value={recallMonths}
                         onChange={(e) => setRecallMonths(Number(e.target.value))}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500"
                         required
                       />
                     </div>
@@ -816,7 +816,7 @@ export function WorkOrders() {
                         step="1000"
                         value={recallKm}
                         onChange={(e) => setRecallKm(Number(e.target.value))}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500"
                         required
                       />
                     </div>
@@ -830,7 +830,7 @@ export function WorkOrders() {
                       multiple
                       value={recallServices}
                       onChange={(e) => setRecallServices(Array.from(e.target.selectedOptions, (option: HTMLOptionElement) => option.value))}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500 h-32"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 h-32"
                     >
                       {catalog.services.map(s => (
                         <option key={s.id} value={s.id}>{s.name}</option>
@@ -853,7 +853,7 @@ export function WorkOrders() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-xl hover:bg-yellow-600"
+                      className="px-4 py-2 text-sm font-medium text-white bg-orange-500 rounded-xl hover:bg-orange-600"
                     >
                       Salvar e Finalizar OS
                     </button>
@@ -895,7 +895,7 @@ export function WorkOrders() {
                           setSelectedCustomerId(e.target.value);
                           setSelectedVehicleId('');
                         }}
-                        className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors"
+                        className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors"
                       >
                         <option value="">Selecione um cliente</option>
                         {customers.map(c => (
@@ -910,7 +910,7 @@ export function WorkOrders() {
                         value={selectedVehicleId} 
                         onChange={e => setSelectedVehicleId(e.target.value)}
                         disabled={!selectedCustomerId}
-                        className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+                        className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors disabled:bg-gray-50 disabled:text-gray-500"
                       >
                         <option value="">Selecione um veículo</option>
                         {filteredVehicles.map(v => (
@@ -933,7 +933,7 @@ export function WorkOrders() {
                               setItemType(e.target.value as 'service' | 'part');
                               setSelectedRefId('');
                             }}
-                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                           >
                             <option value="service">Serviço</option>
                             <option value="part">Peça</option>
@@ -944,7 +944,7 @@ export function WorkOrders() {
                           <select 
                             value={selectedRefId} 
                             onChange={e => setSelectedRefId(e.target.value)}
-                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                           >
                             <option value="">Selecione...</option>
                             {itemType === 'service' 
@@ -961,7 +961,7 @@ export function WorkOrders() {
                             step={itemType === 'part' ? '1' : '0.1'}
                             value={itemQty} 
                             onChange={e => setItemQty(parseFloat(e.target.value) || 1)}
-                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                            className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                           />
                         </div>
                         <div className="col-span-1">
@@ -969,7 +969,7 @@ export function WorkOrders() {
                             type="button" 
                             onClick={handleAddItem}
                             disabled={!selectedRefId}
-                            className="w-full flex justify-center items-center py-2 px-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50 transition-colors"
+                            className="w-full flex justify-center items-center py-2 px-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 transition-colors"
                           >
                             <Plus className="h-5 w-5" />
                           </button>
@@ -1013,7 +1013,7 @@ export function WorkOrders() {
                           <tfoot className="bg-gray-50 border-t border-gray-200">
                             <tr>
                               <td colSpan={4} className="px-4 py-4 text-right text-sm font-medium text-gray-500 uppercase">Total da OS:</td>
-                              <td className="px-4 py-4 text-right text-lg font-bold text-yellow-600">R$ {totalAmount.toFixed(2)}</td>
+                              <td className="px-4 py-4 text-right text-lg font-bold text-orange-600">R$ {totalAmount.toFixed(2)}</td>
                               <td></td>
                             </tr>
                           </tfoot>
@@ -1029,10 +1029,10 @@ export function WorkOrders() {
                       </div>
                     )}
                     <div className="flex flex-row-reverse gap-3">
-                      <button type="submit" className="inline-flex justify-center rounded-xl border border-transparent shadow-sm px-6 py-3 bg-yellow-500 text-sm font-bold text-gray-900 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors">
+                      <button type="submit" className="inline-flex justify-center rounded-xl border border-transparent shadow-sm px-6 py-3 bg-orange-500 text-sm font-bold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors">
                         Salvar OS
                       </button>
-                      <button type="button" onClick={() => setIsModalOpen(false)} className="inline-flex justify-center rounded-xl border border-gray-300 shadow-sm px-6 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors">
+                      <button type="button" onClick={() => setIsModalOpen(false)} className="inline-flex justify-center rounded-xl border border-gray-300 shadow-sm px-6 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors">
                         Cancelar
                       </button>
                     </div>
