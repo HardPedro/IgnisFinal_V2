@@ -610,12 +610,12 @@ export function Quotes() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center">
-          <FileText className="mr-3 h-8 w-8 text-orange-500" />
+          <FileText className="mr-3 h-8 w-8 text-yellow-500" />
           Orçamentos
         </h1>
         <button
           onClick={handleOpenModal}
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-white bg-orange-500 hover:bg-orange-600 transition-all duration-200"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 transition-all duration-200"
         >
           <Plus className="mr-2 h-4 w-4" />
           Novo Orçamento
@@ -627,7 +627,7 @@ export function Quotes() {
           onClick={() => setActiveTab('quotes')}
           className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
             activeTab === 'quotes'
-              ? 'border-orange-500 text-orange-600'
+              ? 'border-yellow-500 text-yellow-600'
               : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
           }`}
         >
@@ -637,7 +637,7 @@ export function Quotes() {
           onClick={() => setActiveTab('preQuotes')}
           className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
             activeTab === 'preQuotes'
-              ? 'border-orange-500 text-orange-600'
+              ? 'border-yellow-500 text-yellow-600'
               : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
           }`}
         >
@@ -647,7 +647,7 @@ export function Quotes() {
           onClick={() => setActiveTab('quoteRequests')}
           className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
             activeTab === 'quoteRequests'
-              ? 'border-orange-500 text-orange-600'
+              ? 'border-yellow-500 text-yellow-600'
               : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
           }`}
         >
@@ -659,7 +659,7 @@ export function Quotes() {
         <ul className="divide-y divide-gray-100">
           {isLoading ? (
             <li className="p-8 text-center text-gray-500">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-500 mx-auto"></div>
             </li>
           ) : activeTab === 'quotes' ? (
             quotes.length === 0 ? (
@@ -803,10 +803,10 @@ export function Quotes() {
             )
           ) : activeTab === 'preQuotes' ? (
             preQuotes.length === 0 ? (
-              <li className="p-8 text-center text-slate-500">Nenhum pré-orçamento encontrado.</li>
+              <li className="p-8 text-center text-gray-500">Nenhum pré-orçamento encontrado.</li>
             ) : (
               preQuotes.map((preQuote) => (
-                <li key={preQuote.id} className="p-6 hover:bg-slate-50 transition-colors">
+                <li key={preQuote.id} className="p-6 hover:bg-gray-50 transition-colors">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
@@ -814,26 +814,26 @@ export function Quotes() {
                           preQuote.status === 'aprovado' ? 'bg-green-100 text-green-800' :
                           preQuote.status === 'enviado' ? 'bg-blue-100 text-blue-800' :
                           preQuote.status === 'reprovado' ? 'bg-red-100 text-red-800' :
-                          'bg-orange-100 text-orange-800'
+                          'bg-amber-100 text-amber-800'
                         }`}>
                           {preQuote.status.toUpperCase()}
                         </span>
-                        <span className="text-sm text-slate-500 flex items-center">
+                        <span className="text-sm text-gray-500 flex items-center">
                           <Calendar className="mr-1 h-4 w-4" />
                           {preQuote.createdAt?.toDate ? new Date(preQuote.createdAt.toDate()).toLocaleDateString('pt-BR') : 'N/A'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-6 mb-2">
-                        <div className="flex items-center text-sm font-medium text-blue-950">
-                          <User className="mr-2 h-4 w-4 text-slate-400" />
+                        <div className="flex items-center text-sm font-medium text-gray-900">
+                          <User className="mr-2 h-4 w-4 text-gray-400" />
                           {preQuote.customerName}
                         </div>
-                        <div className="flex items-center text-sm text-slate-500">
-                          <Car className="mr-2 h-4 w-4 text-slate-400" />
-                          {preQuote.make} {preQuote.model} <span className="ml-1 font-mono bg-slate-100 px-1 rounded">{preQuote.vehiclePlate}</span>
+                        <div className="flex items-center text-sm text-gray-500">
+                          <Car className="mr-2 h-4 w-4 text-gray-400" />
+                          {preQuote.make} {preQuote.model} <span className="ml-1 font-mono bg-gray-100 px-1 rounded">{preQuote.vehiclePlate}</span>
                         </div>
                       </div>
-                      <div className="text-sm text-slate-700 bg-slate-100 p-3 rounded-lg">
+                      <div className="text-sm text-gray-700 bg-gray-100 p-3 rounded-lg">
                         <strong>Descrição do Problema:</strong> {preQuote.description}
                       </div>
                     </div>
@@ -842,7 +842,7 @@ export function Quotes() {
                       {preQuote.status === 'rascunho' && (
                         <button 
                           onClick={() => handleCreateQuoteFromPreQuote(preQuote)}
-                          className="flex items-center px-4 py-2 bg-orange-500 text-white hover:bg-orange-600 rounded-xl text-sm font-bold transition-colors shadow-sm"
+                          className="flex items-center px-4 py-2 bg-yellow-500 text-gray-900 hover:bg-yellow-400 rounded-xl text-sm font-bold transition-colors shadow-sm"
                         >
                           <Plus className="h-4 w-4 mr-2" />
                           Adicionar Valores
@@ -905,36 +905,36 @@ export function Quotes() {
             )
           ) : (
             quoteRequests.length === 0 ? (
-              <li className="p-8 text-center text-slate-500">Nenhuma solicitação de orçamento encontrada.</li>
+              <li className="p-8 text-center text-gray-500">Nenhuma solicitação de orçamento encontrada.</li>
             ) : (
               quoteRequests.map((request) => (
-                <li key={request.id} className="p-6 hover:bg-slate-50 transition-colors">
+                <li key={request.id} className="p-6 hover:bg-gray-50 transition-colors">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
                         <span className={`px-3 py-1 inline-flex text-xs leading-5 font-bold rounded-full ${
                           request.status === 'aprovado' ? 'bg-green-100 text-green-800' :
                           request.status === 'rejeitado' ? 'bg-red-100 text-red-800' :
-                          'bg-orange-100 text-orange-800'
+                          'bg-amber-100 text-amber-800'
                         }`}>
                           {request.status.toUpperCase()}
                         </span>
-                        <span className="text-sm text-slate-500 flex items-center">
+                        <span className="text-sm text-gray-500 flex items-center">
                           <Calendar className="mr-1 h-4 w-4" />
                           {request.createdAt?.toDate ? new Date(request.createdAt.toDate()).toLocaleDateString('pt-BR') : 'N/A'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-6 mb-2">
-                        <div className="flex items-center text-sm font-medium text-blue-950">
-                          <User className="mr-2 h-4 w-4 text-slate-400" />
+                        <div className="flex items-center text-sm font-medium text-gray-900">
+                          <User className="mr-2 h-4 w-4 text-gray-400" />
                           {request.customerName}
                         </div>
-                        <div className="flex items-center text-sm text-slate-500">
-                          <Car className="mr-2 h-4 w-4 text-slate-400" />
-                          {request.make} {request.model} <span className="ml-1 font-mono bg-slate-100 px-1 rounded">{request.vehiclePlate}</span>
+                        <div className="flex items-center text-sm text-gray-500">
+                          <Car className="mr-2 h-4 w-4 text-gray-400" />
+                          {request.make} {request.model} <span className="ml-1 font-mono bg-gray-100 px-1 rounded">{request.vehiclePlate}</span>
                         </div>
                       </div>
-                      <div className="text-sm text-slate-700 bg-slate-100 p-3 rounded-lg">
+                      <div className="text-sm text-gray-700 bg-gray-100 p-3 rounded-lg">
                         <strong>Descrição do Problema:</strong> {request.description}
                         {request.items && request.items.length > 0 && (
                           <div className="mt-2">
@@ -1027,17 +1027,17 @@ export function Quotes() {
       {/* Modal */}
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-blue-950/50 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50" onClick={() => setIsModalOpen(false)}>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl text-left overflow-hidden shadow-xl w-full max-w-3xl border border-slate-200 max-h-[90vh] flex flex-col"
+              className="bg-white rounded-2xl text-left overflow-hidden shadow-xl w-full max-w-3xl border border-gray-100 max-h-[90vh] flex flex-col"
             >
-              <div className="px-6 pt-6 pb-4 border-b border-slate-200 flex justify-between items-center">
-                <h3 className="text-xl font-bold text-blue-950">Novo Orçamento</h3>
-                <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-500 bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+              <div className="px-6 pt-6 pb-4 border-b border-gray-100 flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900">Novo Orçamento</h3>
+                <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-gray-500 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition-colors">
                   <X className="h-5 w-5" />
                 </button>
               </div>
@@ -1046,7 +1046,7 @@ export function Quotes() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Cliente</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Cliente</label>
                         <select 
                           required 
                           value={selectedCustomerId} 
@@ -1054,7 +1054,7 @@ export function Quotes() {
                             setSelectedCustomerId(e.target.value);
                             setSelectedVehicleId('');
                           }} 
-                          className="block w-full border border-slate-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors"
+                          className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors"
                         >
                           <option value="">Selecione um cliente</option>
                           {customers.map(c => (
@@ -1063,12 +1063,12 @@ export function Quotes() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Veículo</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Veículo</label>
                         <select 
                           required 
                           value={selectedVehicleId} 
                           onChange={e => setSelectedVehicleId(e.target.value)} 
-                          className="block w-full border border-slate-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors disabled:bg-slate-50 disabled:text-slate-500"
+                          className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors disabled:bg-gray-50 disabled:text-gray-500"
                           disabled={!selectedCustomerId}
                         >
                           <option value="">Selecione um veículo</option>
@@ -1079,29 +1079,29 @@ export function Quotes() {
                       </div>
                     </div>
 
-                    <div className="border-t border-slate-100 pt-6">
-                      <h4 className="text-lg font-semibold text-blue-950 mb-4">Adicionar Itens</h4>
-                      <div className="flex space-x-4 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div className="border-t border-gray-100 pt-6">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Adicionar Itens</h4>
+                      <div className="flex space-x-4 mb-6 bg-gray-50 p-4 rounded-xl border border-gray-100">
                         <div className="w-1/4">
-                          <label className="block text-sm font-medium text-slate-700 mb-1">Tipo</label>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Tipo</label>
                           <select 
                             value={itemType} 
                             onChange={e => {
                               setItemType(e.target.value as any);
                               setSelectedRefId('');
                             }} 
-                            className="block w-full border border-slate-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors"
+                            className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors"
                           >
                             <option value="service">Serviço</option>
                             <option value="part">Peça</option>
                           </select>
                         </div>
                         <div className="w-1/2">
-                          <label className="block text-sm font-medium text-slate-700 mb-1">Item</label>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Item</label>
                           <select 
                             value={selectedRefId} 
                             onChange={e => setSelectedRefId(e.target.value)} 
-                            className="block w-full border border-slate-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors"
+                            className="block w-full border border-gray-300 rounded-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors"
                           >
                             <option value="">Selecione um item</option>
                             {itemType === 'service' 
@@ -1111,20 +1111,20 @@ export function Quotes() {
                           </select>
                         </div>
                         <div className="w-1/4">
-                          <label className="block text-sm font-medium text-slate-700 mb-1">Qtd</label>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Qtd</label>
                           <div className="flex">
                             <input 
                               type="number" 
                               min="1" 
                               value={itemQty} 
                               onChange={e => setItemQty(parseInt(e.target.value) || 1)} 
-                              className="block w-full border border-slate-300 rounded-l-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                              className="block w-full border border-gray-300 rounded-l-xl shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                             />
                             <button 
                               type="button" 
                               onClick={handleAddItem}
                               disabled={!selectedRefId}
-                              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-xl shadow-sm text-white bg-blue-950 hover:bg-blue-900 disabled:opacity-50 transition-colors"
+                              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-xl shadow-sm text-white bg-gray-800 hover:bg-gray-900 disabled:opacity-50 transition-colors"
                             >
                               Add
                             </button>
@@ -1133,29 +1133,29 @@ export function Quotes() {
                       </div>
 
                       {items.length > 0 && (
-                        <div className="mt-4 border border-slate-200 rounded-xl overflow-hidden">
-                          <table className="min-w-full divide-y divide-slate-200">
-                            <thead className="bg-slate-50">
+                        <div className="mt-4 border border-gray-200 rounded-xl overflow-hidden">
+                          <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                               <tr>
-                                <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Item</th>
-                                <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Tipo</th>
-                                <th className="px-4 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Qtd</th>
-                                <th className="px-4 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Preço Un.</th>
-                                <th className="px-4 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Subtotal</th>
+                                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Item</th>
+                                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Tipo</th>
+                                <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">Qtd</th>
+                                <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">Preço Un.</th>
+                                <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">Subtotal</th>
                                 <th className="px-4 py-3"></th>
                               </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-slate-200">
+                            <tbody className="bg-white divide-y divide-gray-200">
                               {items.map((item, idx) => (
-                                <tr key={idx} className="hover:bg-slate-50">
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-blue-950">{item.name}</td>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-slate-500">
-                                    <span className={`px-2 py-1 rounded text-xs font-medium ${item.type === 'service' ? 'bg-orange-50 text-orange-800' : 'bg-slate-100 text-slate-800'}`}>
+                                <tr key={idx} className="hover:bg-gray-50">
+                                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{item.name}</td>
+                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                                    <span className={`px-2 py-1 rounded text-xs font-medium ${item.type === 'service' ? 'bg-yellow-50 text-yellow-800' : 'bg-gray-100 text-gray-800'}`}>
                                       {item.type === 'service' ? 'Serviço' : 'Peça'}
                                     </span>
                                   </td>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-blue-950 text-right">{item.qty}</td>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-blue-950 text-right">
+                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 text-right">{item.qty}</td>
+                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 text-right">
                                     <div className="flex items-center justify-end">
                                       <span className="mr-1">R$</span>
                                       <input
@@ -1168,12 +1168,12 @@ export function Quotes() {
                                           newItems[idx].unitPrice = parseFloat(e.target.value) || 0;
                                           setItems(newItems);
                                         }}
-                                        className="w-24 text-right border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                                        className="w-24 text-right border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                                         placeholder="0.00"
                                       />
                                     </div>
                                   </td>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-blue-950 text-right font-bold">R$ {(item.qty * (item.unitPrice || 0)).toFixed(2)}</td>
+                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 text-right font-bold">R$ {(item.qty * (item.unitPrice || 0)).toFixed(2)}</td>
                                   <td className="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
                                     <button type="button" onClick={() => handleRemoveItem(idx)} className="text-red-500 hover:text-red-700 p-1 rounded hover:bg-red-50 transition-colors">
                                       <Trash2 className="h-4 w-4" />
@@ -1182,10 +1182,10 @@ export function Quotes() {
                                 </tr>
                               ))}
                             </tbody>
-                            <tfoot className="bg-slate-50 border-t border-slate-200">
+                            <tfoot className="bg-gray-50 border-t border-gray-200">
                               <tr>
-                                <td colSpan={4} className="px-4 py-4 text-right text-sm font-medium text-slate-500 uppercase">Total do Orçamento:</td>
-                                <td className="px-4 py-4 text-right text-lg font-bold text-orange-600">R$ {(totalAmount || 0).toFixed(2)}</td>
+                                <td colSpan={4} className="px-4 py-4 text-right text-sm font-medium text-gray-500 uppercase">Total do Orçamento:</td>
+                                <td className="px-4 py-4 text-right text-lg font-bold text-yellow-600">R$ {(totalAmount || 0).toFixed(2)}</td>
                                 <td></td>
                               </tr>
                             </tfoot>
@@ -1194,11 +1194,11 @@ export function Quotes() {
                       )}
                     </div>
                     
-                    <div className="mt-8 pt-4 border-t border-slate-100 flex flex-row-reverse gap-3">
-                      <button type="submit" className="inline-flex justify-center rounded-xl border border-transparent shadow-sm px-6 py-3 bg-orange-500 text-sm font-bold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors">
+                    <div className="mt-8 pt-4 border-t border-gray-100 flex flex-row-reverse gap-3">
+                      <button type="submit" className="inline-flex justify-center rounded-xl border border-transparent shadow-sm px-6 py-3 bg-yellow-500 text-sm font-bold text-gray-900 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors">
                         Salvar Orçamento
                       </button>
-                      <button type="button" onClick={() => setIsModalOpen(false)} className="inline-flex justify-center rounded-xl border border-slate-300 shadow-sm px-6 py-3 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors">
+                      <button type="button" onClick={() => setIsModalOpen(false)} className="inline-flex justify-center rounded-xl border border-gray-300 shadow-sm px-6 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors">
                         Cancelar
                       </button>
                     </div>

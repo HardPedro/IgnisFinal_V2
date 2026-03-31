@@ -61,7 +61,7 @@ export function ApproveQuote() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
+        <Loader2 className="h-8 w-8 animate-spin text-yellow-500" />
       </div>
     );
   }
@@ -104,7 +104,7 @@ export function ApproveQuote() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
         <div className="flex items-center justify-center mb-6">
-          <FileText className="h-8 w-8 text-orange-500 mr-3" />
+          <FileText className="h-8 w-8 text-yellow-500 mr-3" />
           <h2 className="text-2xl font-bold text-gray-900">Aprovação de Orçamento Oficial</h2>
         </div>
         
@@ -121,7 +121,7 @@ export function ApproveQuote() {
           
           <div className="flex justify-between items-center border-t border-gray-200 pt-4">
             <span className="font-bold text-gray-900">Total:</span>
-            <span className="text-xl font-bold text-orange-600">R$ {(quote.totalAmount || 0).toFixed(2)}</span>
+            <span className="text-xl font-bold text-yellow-600">R$ {(quote.totalAmount || 0).toFixed(2)}</span>
           </div>
         </div>
 

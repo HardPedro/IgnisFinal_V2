@@ -367,7 +367,7 @@ export function Settings() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center">
-          <SettingsIcon className="mr-3 h-8 w-8 text-orange-500" />
+          <SettingsIcon className="mr-3 h-8 w-8 text-yellow-500" />
           Configurações
         </h1>
       </div>
@@ -378,7 +378,7 @@ export function Settings() {
             onClick={() => setActiveTab('general')}
             className={`pb-4 px-1 border-b-2 font-medium text-sm transition-colors ${
               activeTab === 'general'
-                ? 'border-orange-500 text-orange-600'
+                ? 'border-yellow-500 text-yellow-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -388,7 +388,7 @@ export function Settings() {
             onClick={() => setActiveTab('team')}
             className={`pb-4 px-1 border-b-2 font-medium text-sm transition-colors ${
               activeTab === 'team'
-                ? 'border-orange-500 text-orange-600'
+                ? 'border-yellow-500 text-yellow-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -398,7 +398,7 @@ export function Settings() {
             onClick={() => setActiveTab('whatsapp')}
             className={`pb-4 px-1 border-b-2 font-medium text-sm transition-colors ${
               activeTab === 'whatsapp'
-                ? 'border-orange-500 text-orange-600'
+                ? 'border-yellow-500 text-yellow-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -409,7 +409,7 @@ export function Settings() {
               onClick={() => setActiveTab('admin')}
               className={`pb-4 px-1 border-b-2 font-medium text-sm transition-colors ${
                 activeTab === 'admin'
-                  ? 'border-orange-500 text-orange-600'
+                  ? 'border-yellow-500 text-yellow-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -432,7 +432,7 @@ export function Settings() {
                     type="text" 
                     value={officeSettings.name}
                     onChange={e => setOfficeSettings({...officeSettings, name: e.target.value})}
-                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                   />
                 </div>
                 
@@ -443,7 +443,7 @@ export function Settings() {
                     value={officeSettings.cnpj}
                     onChange={e => setOfficeSettings({...officeSettings, cnpj: e.target.value})}
                     placeholder="00.000.000/0000-00"
-                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                   />
                 </div>
 
@@ -454,7 +454,7 @@ export function Settings() {
                     value={officeSettings.phone}
                     onChange={e => setOfficeSettings({...officeSettings, phone: e.target.value})}
                     placeholder="(00) 00000-0000"
-                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                   />
                 </div>
 
@@ -465,7 +465,7 @@ export function Settings() {
                     value={officeSettings.logo_url}
                     onChange={e => setOfficeSettings({...officeSettings, logo_url: e.target.value})}
                     placeholder="https://exemplo.com/logo.png"
-                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                    className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                   />
                 </div>
               </div>
@@ -476,7 +476,7 @@ export function Settings() {
                   rows={2}
                   value={officeSettings.address}
                   onChange={e => setOfficeSettings({...officeSettings, address: e.target.value})}
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors" 
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors" 
                 />
               </div>
 
@@ -485,7 +485,7 @@ export function Settings() {
                   <button 
                     type="submit" 
                     disabled={isSaving}
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-orange-500 hover:bg-orange-400 transition-all duration-200 disabled:opacity-50"
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 transition-all duration-200 disabled:opacity-50"
                   >
                     <Save className="mr-2 h-4 w-4" />
                     {isSaving ? 'Salvando...' : 'Salvar Alterações'}
@@ -553,7 +553,7 @@ export function Settings() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{member.email}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                        member.role === 'Gestor' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'
+                        member.role === 'Gestor' ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'
                       }`}>
                         {member.role}
                       </span>
@@ -587,7 +587,7 @@ export function Settings() {
                     ...officeSettings, 
                     mecanicoPermissions: { ...officeSettings.mecanicoPermissions, canViewFinancial: e.target.checked }
                   })}
-                  className="h-5 w-5 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                  className="h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
                 />
                 <div>
                   <span className="block text-sm font-medium text-gray-900">Acessar Financeiro</span>
@@ -603,7 +603,7 @@ export function Settings() {
                     ...officeSettings, 
                     mecanicoPermissions: { ...officeSettings.mecanicoPermissions, canDeleteOS: e.target.checked }
                   })}
-                  className="h-5 w-5 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                  className="h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
                 />
                 <div>
                   <span className="block text-sm font-medium text-gray-900">Excluir Ordens de Serviço</span>
@@ -619,7 +619,7 @@ export function Settings() {
                     ...officeSettings, 
                     mecanicoPermissions: { ...officeSettings.mecanicoPermissions, canEditSettings: e.target.checked }
                   })}
-                  className="h-5 w-5 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                  className="h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
                 />
                 <div>
                   <span className="block text-sm font-medium text-gray-900">Editar Configurações</span>
@@ -632,7 +632,7 @@ export function Settings() {
               <button 
                 onClick={handleSaveGeneralSettings}
                 disabled={isSaving}
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-orange-500 hover:bg-orange-400 transition-all duration-200 disabled:opacity-50"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 transition-all duration-200 disabled:opacity-50"
               >
                 <Save className="mr-2 h-4 w-4" />
                 {isSaving ? 'Salvando...' : 'Salvar Permissões'}
@@ -682,7 +682,7 @@ export function Settings() {
                     }
                   }}
                   placeholder="Ex: https://api.z-api.io/instances/3F00.../token/3199..."
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors font-mono" 
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors font-mono" 
                 />
                 <p className="text-xs text-gray-500 mt-1">Cole a URL completa aqui e nós extraímos o ID e o Token automaticamente.</p>
               </div>
@@ -718,7 +718,7 @@ export function Settings() {
                   value={zapiClientToken}
                   onChange={e => setZapiClientToken(e.target.value)}
                   placeholder="Opcional, usado para enviar mensagens"
-                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors font-mono" 
+                  className="block w-full border border-gray-300 rounded-xl shadow-sm py-3 px-4 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors font-mono" 
                 />
                 <p className="text-xs text-gray-500 mt-1">Encontrado no painel da Z-API em Segurança {'>'} Token de Segurança.</p>
               </div>
@@ -727,7 +727,7 @@ export function Settings() {
                 <button 
                   type="submit" 
                   disabled={isSaving}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-orange-500 hover:bg-orange-400 transition-all duration-200 disabled:opacity-50"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 transition-all duration-200 disabled:opacity-50"
                 >
                   <Save className="mr-2 h-4 w-4" />
                   {isSaving ? 'Salvando...' : 'Salvar Configurações API'}
@@ -808,7 +808,7 @@ export function Settings() {
               <p className="text-sm text-gray-500 mb-4">Visualize as solicitações de acesso recebidas pela landing page.</p>
               <button 
                 onClick={handleOpenLeadsModal}
-                className="inline-flex items-center px-4 py-2 bg-orange-500 text-gray-900 rounded-xl text-sm font-bold hover:bg-orange-400 transition-all"
+                className="inline-flex items-center px-4 py-2 bg-yellow-500 text-gray-900 rounded-xl text-sm font-bold hover:bg-yellow-400 transition-all"
               >
                 <Users className="mr-2 h-4 w-4" />
                 Ver Solicitações
@@ -829,14 +829,14 @@ export function Settings() {
             <div className="bg-gray-900 shadow-sm sm:rounded-2xl border border-gray-800 overflow-hidden">
               <div className="px-8 py-6 border-b border-gray-800 flex items-center justify-between">
                 <div className="flex items-center">
-                  <Terminal className="h-6 w-6 text-orange-500 mr-3" />
+                  <Terminal className="h-6 w-6 text-yellow-500 mr-3" />
                   <h2 className="text-xl font-semibold text-white">Área do Desenvolvedor</h2>
                 </div>
                 <div className="flex items-center space-x-4">
                   {isSuperAdmin && (
                     <button
                       onClick={handleOpenAccountsModal}
-                      className="bg-orange-500 hover:bg-orange-400 text-gray-900 text-sm font-bold px-4 py-2 rounded-xl flex items-center transition-colors"
+                      className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 text-sm font-bold px-4 py-2 rounded-xl flex items-center transition-colors"
                     >
                       <Users className="h-4 w-4 mr-2" />
                       Administrar Contas
@@ -852,7 +852,7 @@ export function Settings() {
               <div className="p-8">
                 <div className="mb-6 bg-gray-800/50 p-4 rounded-xl border border-gray-700">
                   <h3 className="text-sm font-medium text-gray-300 mb-2 flex items-center">
-                    <Key className="h-4 w-4 mr-2 text-orange-500" />
+                    <Key className="h-4 w-4 mr-2 text-yellow-500" />
                     Integração WhatsApp via Z-API
                   </h3>
                   <p className="text-xs text-gray-400 leading-relaxed">
@@ -869,7 +869,7 @@ export function Settings() {
                       value={zapiInstanceId}
                       onChange={(e) => setZapiInstanceId(e.target.value)}
                       placeholder="Ex: 3F00CCD5AE7541FFFB8086C84BA70"
-                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors font-mono" 
+                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors font-mono" 
                     />
                   </div>
                   
@@ -880,7 +880,7 @@ export function Settings() {
                       value={zapiToken}
                       onChange={(e) => setZapiToken(e.target.value)}
                       placeholder="Ex: 3199E688571927B4B2352F44"
-                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors font-mono" 
+                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors font-mono" 
                     />
                   </div>
 
@@ -891,7 +891,7 @@ export function Settings() {
                       value={zapiClientToken}
                       onChange={(e) => setZapiClientToken(e.target.value)}
                       placeholder="Opcional, usado para enviar mensagens"
-                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors font-mono" 
+                      className="block w-full bg-gray-800 border border-gray-700 rounded-xl shadow-sm py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm transition-colors font-mono" 
                     />
                   </div>
 
@@ -899,7 +899,7 @@ export function Settings() {
                     <button 
                       type="submit"
                       disabled={isSaving}
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-orange-500 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-orange-500 transition-all duration-200 disabled:opacity-50"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-xl shadow-sm text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-yellow-500 transition-all duration-200 disabled:opacity-50"
                     >
                       {isSaving ? 'Salvando...' : 'Salvar Credenciais'}
                     </button>
@@ -944,7 +944,7 @@ export function Settings() {
                     required
                     value={newMember.name}
                     onChange={e => setNewMember({...newMember, name: e.target.value})}
-                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                   />
                 </div>
                 <div>
@@ -954,7 +954,7 @@ export function Settings() {
                     required
                     value={newMember.email}
                     onChange={e => setNewMember({...newMember, email: e.target.value})}
-                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                   />
                 </div>
                 <div>
@@ -962,14 +962,14 @@ export function Settings() {
                   <select 
                     value={newMember.role}
                     onChange={e => setNewMember({...newMember, role: e.target.value})}
-                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+                    className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                   >
                     <option value="Mecanico">Mecânico</option>
                     <option value="Gestor">Gestor</option>
                   </select>
                 </div>
                 <div className="pt-4 flex gap-3">
-                  <button type="submit" className="flex-1 bg-orange-500 text-gray-900 py-3 rounded-xl font-bold hover:bg-orange-400 transition-all">
+                  <button type="submit" className="flex-1 bg-yellow-500 text-gray-900 py-3 rounded-xl font-bold hover:bg-yellow-400 transition-all">
                     Criar Membro
                   </button>
                   <button 
@@ -1006,7 +1006,7 @@ export function Settings() {
             >
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Users className="h-5 w-5 mr-2 text-orange-500" />
+                  <Users className="h-5 w-5 mr-2 text-yellow-500" />
                   Solicitações de Acesso
                 </h2>
                 <button 
@@ -1075,7 +1075,7 @@ export function Settings() {
             >
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Users className="h-5 w-5 mr-2 text-orange-500" />
+                  <Users className="h-5 w-5 mr-2 text-yellow-500" />
                   Administrar Contas (Estabelecimentos)
                 </h2>
                 <button 
@@ -1098,7 +1098,7 @@ export function Settings() {
                         required
                         value={newAccount.companyName}
                         onChange={e => setNewAccount({...newAccount, companyName: e.target.value})}
-                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                       />
                     </div>
                     <div>
@@ -1108,7 +1108,7 @@ export function Settings() {
                         required
                         value={newAccount.name}
                         onChange={e => setNewAccount({...newAccount, name: e.target.value})}
-                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                       />
                     </div>
                     <div>
@@ -1118,7 +1118,7 @@ export function Settings() {
                         required
                         value={newAccount.email}
                         onChange={e => setNewAccount({...newAccount, email: e.target.value})}
-                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                       />
                     </div>
                     <div>
@@ -1127,7 +1127,7 @@ export function Settings() {
                         required
                         value={newAccount.plan}
                         onChange={e => setNewAccount({...newAccount, plan: e.target.value})}
-                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" 
+                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" 
                       >
                         <option value="Core Operacional">Core Operacional (R$ 397)</option>
                         <option value="Central Inteligente">Central Inteligente (R$ 697)</option>
@@ -1136,7 +1136,7 @@ export function Settings() {
                     <button 
                       type="submit"
                       disabled={isCreatingAccount}
-                      className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-gray-900 bg-orange-500 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50"
+                      className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
                     >
                       {isCreatingAccount ? 'Criando...' : (
                         <>
@@ -1153,7 +1153,7 @@ export function Settings() {
                   <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 mb-4">Contas Ativas</h3>
                   {isLoadingAccounts ? (
                     <div className="flex justify-center py-8">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-500"></div>
                     </div>
                   ) : (
                     <div className="overflow-x-auto">
@@ -1179,7 +1179,7 @@ export function Settings() {
                         value={acc.plan || 'Core Operacional'}
                         onChange={(e) => handleUpdatePlan(acc.id, e.target.value)}
                         disabled={updatingPlanId === acc.id}
-                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-1 px-2 focus:ring-orange-500 focus:border-orange-500 sm:text-xs"
+                        className="block w-full border border-gray-300 rounded-lg shadow-sm py-1 px-2 focus:ring-yellow-500 focus:border-yellow-500 sm:text-xs"
                       >
                         <option value="Core Operacional">Core Operacional</option>
                         <option value="Central Inteligente">Central Inteligente</option>
@@ -1237,7 +1237,7 @@ export function Settings() {
             >
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Shield className="h-5 w-5 mr-2 text-orange-500" />
+                  <Shield className="h-5 w-5 mr-2 text-yellow-500" />
                   Autenticação Necessária
                 </h2>
                 <button 
@@ -1255,7 +1255,7 @@ export function Settings() {
                   type="password"
                   value={whatsappPassword}
                   onChange={(e) => setWhatsappPassword(e.target.value)}
-                  className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500 sm:text-sm mb-4"
+                  className="block w-full border border-gray-300 rounded-lg shadow-sm py-2 px-3 focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm mb-4"
                   placeholder="Senha"
                 />
                 <div className="flex justify-end space-x-3">
@@ -1267,7 +1267,7 @@ export function Settings() {
                   </button>
                   <button
                     onClick={confirmSaveDevSettings}
-                    className="px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600"
+                    className="px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-600"
                   >
                     Confirmar
                   </button>
@@ -1289,7 +1289,7 @@ export function Settings() {
             >
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <QrCode className="h-5 w-5 mr-2 text-orange-500" />
+                  <QrCode className="h-5 w-5 mr-2 text-yellow-500" />
                   QR Code WhatsApp
                 </h2>
                 <button 

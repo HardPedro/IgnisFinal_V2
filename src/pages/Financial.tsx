@@ -154,7 +154,7 @@ export default function Financial() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
       </div>
     );
   }
@@ -164,7 +164,7 @@ export default function Financial() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center">
-            <DollarSign className="mr-3 h-8 w-8 text-orange-500" />
+            <DollarSign className="mr-3 h-8 w-8 text-yellow-500" />
             Financeiro
           </h1>
           <p className="text-gray-500 mt-1">Visão geral da saúde financeira da sua oficina.</p>
@@ -209,7 +209,7 @@ export default function Financial() {
           className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-orange-50 rounded-2xl text-orange-600">
+            <div className="p-3 bg-yellow-50 rounded-2xl text-yellow-600">
               <CreditCard className="h-6 w-6" />
             </div>
             <div className="text-gray-400 text-sm font-medium">A receber</div>
@@ -258,7 +258,7 @@ export default function Financial() {
             <h2 className="text-xl font-semibold text-gray-900">Fluxo de Receita</h2>
             <div className="flex items-center gap-2">
               <div className="flex items-center">
-                <div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
                 <span className="text-xs text-gray-500 font-medium">Receita</span>
               </div>
             </div>
@@ -338,7 +338,7 @@ export default function Financial() {
       <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-semibold text-gray-900">Transações Recentes</h2>
-          <button className="text-sm font-bold text-orange-600 hover:text-orange-700 transition-colors">
+          <button className="text-sm font-bold text-yellow-600 hover:text-yellow-700 transition-colors">
             Ver Tudo
           </button>
         </div>
@@ -372,7 +372,7 @@ export default function Financial() {
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                       tx.status === 'Finalizada' 
                         ? 'bg-green-100 text-green-800' 
-                        : 'bg-orange-100 text-orange-800'
+                        : 'bg-yellow-100 text-yellow-800'
                     }`}>
                       {tx.status === 'Finalizada' ? 'Pago' : 'Pendente'}
                     </span>

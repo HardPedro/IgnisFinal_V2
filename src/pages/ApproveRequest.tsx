@@ -70,7 +70,7 @@ export function ApproveRequest() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
+        <Loader2 className="h-8 w-8 animate-spin text-yellow-500" />
       </div>
     );
   }
@@ -113,8 +113,8 @@ export function ApproveRequest() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
         <div className="text-center mb-8">
-          <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <FileText className="h-8 w-8 text-orange-600" />
+          <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FileText className="h-8 w-8 text-yellow-600" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Confirmar Solicitação</h1>
           <p className="text-gray-500 mt-2">Por favor, verifique se os dados abaixo estão corretos antes de enviarmos para a oficina.</p>
@@ -158,14 +158,14 @@ export function ApproveRequest() {
         <div className="space-y-3">
           <button
             onClick={() => handleAction('pendente')}
-            className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-sm font-bold rounded-xl text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors shadow-sm"
+            className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-sm font-bold rounded-xl text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors shadow-sm"
           >
             <CheckCircle className="h-5 w-5 mr-2" />
             Sim, os dados estão corretos
           </button>
           <button
             onClick={() => handleAction('cancelado_pelo_cliente')}
-            className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 text-sm font-bold rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors"
+            className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 text-sm font-bold rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors"
           >
             <XCircle className="h-5 w-5 mr-2" />
             Não, cancelar solicitação
